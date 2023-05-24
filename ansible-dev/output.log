@@ -1,0 +1,161 @@
+2023-05-19 15:40:18,599 p=11826 u=ec2-user n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: webservers
+
+2023-05-19 15:40:18,600 p=11826 u=ec2-user n=ansible | playbook: first-playbook.yaml
+2023-05-19 15:46:42,832 p=11870 u=ec2-user n=ansible | ERROR! the playbook: /home/ec2-user/ansible-dev/first-playbook.yml  could not be found
+2023-05-19 15:47:03,746 p=11872 u=ec2-user n=ansible | ERROR! the playbook: first-playbook.yaml  could not be found
+2023-05-19 15:47:34,744 p=11875 u=ec2-user n=ansible | ERROR! the playbook: first-playbook.yaml  could not be found
+2023-05-19 15:47:53,324 p=11877 u=ec2-user n=ansible | ERROR! the playbook: /home/ec2-user/ansible-dev/first-playbook.yml  could not be found
+2023-05-19 15:55:57,642 p=11937 u=ec2-user n=ansible | ERROR! the playbook: /home/ec2-user/ansible-dev/first-playbook.yml could not be found
+2023-05-19 15:56:50,528 p=11990 u=ec2-user n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: webservers
+
+2023-05-19 15:56:50,529 p=11990 u=ec2-user n=ansible | playbook: first-playbook.yaml
+2023-05-19 16:00:36,485 p=12019 u=ec2-user n=ansible | [WARNING]:  * Failed to parse /home/ec2-user/ansible-dev/inventory.txt with ini plugin:
+/home/ec2-user/ansible-dev/inventory.txt:8: Section [devqa:children] includes undefined group:
+qaserver
+
+2023-05-19 16:00:36,485 p=12019 u=ec2-user n=ansible | [WARNING]: Unable to parse /home/ec2-user/ansible-dev/inventory.txt as an inventory source
+
+2023-05-19 16:00:36,485 p=12019 u=ec2-user n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2023-05-19 16:00:36,638 p=12019 u=ec2-user n=ansible | server] | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: Could not resolve hostname server]: Name or service not known",
+    "unreachable": true
+}
+2023-05-19 16:00:37,510 p=12019 u=ec2-user n=ansible | 54.152.180.125 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2023-05-19 16:01:36,358 p=12075 u=ec2-user n=ansible | 54.152.180.125 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2023-05-19 16:01:36,364 p=12075 u=ec2-user n=ansible | 34.238.233.186 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2023-05-19 16:01:58,180 p=12110 u=ec2-user n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: webservers
+
+2023-05-19 16:01:58,181 p=12110 u=ec2-user n=ansible | PLAY [webservers] ************************************************************************************
+2023-05-19 16:01:58,181 p=12110 u=ec2-user n=ansible | skipping: no hosts matched
+2023-05-19 16:01:58,182 p=12110 u=ec2-user n=ansible | PLAY RECAP *******************************************************************************************
+2023-05-19 16:06:10,505 p=12175 u=ec2-user n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  mapping values are not allowed in this context
+
+The error appears to be in '/home/ec2-user/ansible-dev/first-playbook.yml': line 4, column 14, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+hosts: webservers
+  remote_user: vagrant
+             ^ here
+
+2023-05-19 16:07:55,628 p=12185 u=ec2-user n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  mapping values are not allowed in this context
+
+The error appears to be in '/home/ec2-user/ansible-dev/first-playbook.yml': line 4, column 14, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+hosts: webservers
+  remote_user: ec2-user
+             ^ here
+
+2023-05-19 16:11:13,529 p=12220 u=ec2-user n=ansible | [WARNING]: While constructing a mapping from /home/ec2-user/ansible-dev/first-playbook.yml, line 2,
+column 3, found a duplicate dict key (tasks). Using last defined value only.
+
+2023-05-19 16:11:13,579 p=12220 u=ec2-user n=ansible | PLAY [devserver] *************************************************************************************
+2023-05-19 16:11:13,592 p=12220 u=ec2-user n=ansible | TASK [Gathering Facts] *******************************************************************************
+2023-05-19 16:11:15,510 p=12220 u=ec2-user n=ansible | ok: [34.238.233.186]
+2023-05-19 16:11:15,533 p=12220 u=ec2-user n=ansible | TASK [Creating user] *********************************************************************************
+2023-05-19 16:11:16,485 p=12220 u=ec2-user n=ansible | changed: [34.238.233.186]
+2023-05-19 16:11:16,497 p=12220 u=ec2-user n=ansible | TASK [create file] ***********************************************************************************
+2023-05-19 16:11:16,940 p=12220 u=ec2-user n=ansible | changed: [34.238.233.186]
+2023-05-19 16:11:16,951 p=12220 u=ec2-user n=ansible | TASK [Create directory] ******************************************************************************
+2023-05-19 16:11:17,279 p=12220 u=ec2-user n=ansible | changed: [34.238.233.186]
+2023-05-19 16:11:17,291 p=12220 u=ec2-user n=ansible | TASK [install apache] ********************************************************************************
+2023-05-19 16:11:26,794 p=12220 u=ec2-user n=ansible | changed: [34.238.233.186]
+2023-05-19 16:11:26,812 p=12220 u=ec2-user n=ansible | TASK [install finger] ********************************************************************************
+2023-05-19 16:11:34,096 p=12220 u=ec2-user n=ansible | changed: [34.238.233.186]
+2023-05-19 16:11:34,120 p=12220 u=ec2-user n=ansible | PLAY RECAP *******************************************************************************************
+2023-05-19 16:11:34,120 p=12220 u=ec2-user n=ansible | 34.238.233.186             : ok=6    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-05-20 02:02:24,989 p=14985 u=ec2-user n=ansible | ERROR! the playbook: /home/ec2-user/ansible-dev/playbook.yml could not be found
+2023-05-20 02:03:22,595 p=14989 u=ec2-user n=ansible | ERROR! the playbook: /home/ec2-user/ansible-dev/playbook.yml could not be found
+2023-05-20 02:05:48,643 p=15017 u=ec2-user n=ansible | ERROR! the playbook: playbook.yml could not be found
+2023-05-20 02:08:09,486 p=15024 u=ec2-user n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 3 column 3 (char 4)
+
+Syntax Error while loading YAML.
+  mapping values are not allowed in this context
+
+The error appears to be in '/home/ec2-user/ansible-dev/apache-role-play.yml': line 4, column 9, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+  ---
+  - name: Install Apache web server
+        ^ here
+
+2023-05-20 02:08:27,398 p=15027 u=ec2-user n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 3 column 3 (char 4)
+
+Syntax Error while loading YAML.
+  mapping values are not allowed in this context
+
+The error appears to be in '/home/ec2-user/ansible-dev/apache-role-play.yml': line 4, column 9, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+  ---
+  - name: Install Apache web server
+        ^ here
+
+2023-05-20 02:13:47,658 p=15099 u=ec2-user n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 3 column 3 (char 4)
+
+Syntax Error while loading YAML.
+  mapping values are not allowed in this context
+
+The error appears to be in '/home/ec2-user/ansible-dev/apache-role-play.yml': line 4, column 9, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+  ---
+  - name: Install Apache web server
+        ^ here
+
+2023-05-20 02:14:55,606 p=15108 u=ec2-user n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 2 column 3 (char 3)
+
+Syntax Error while loading YAML.
+  mapping values are not allowed in this context
+
+The error appears to be in '/home/ec2-user/ansible-dev/apache-role-play.yml': line 3, column 9, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+  ---
+  - name: Install Apache web server
+        ^ here
+
